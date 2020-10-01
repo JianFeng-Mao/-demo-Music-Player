@@ -1,2 +1,2 @@
 # -demo-Music-Player
-音乐播放器
+简易音乐播放器
