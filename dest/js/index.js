@@ -1,0 +1,1 @@
+document.getElementsByTagName("div")[0].onclick=function(e){e.target.style.backgroundColor="red"};

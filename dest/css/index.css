@@ -1,0 +1,160 @@
+body,
+dl,
+dd,
+h2 {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-size: cover;
+}
+body #wrap {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 15vw;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.2);
+}
+body #wrap .song-img {
+  width: 70vw;
+  height: 70vw;
+  border-radius: 50%;
+  background: #000;
+  margin: 0 auto;
+  position: relative;
+}
+body #wrap .song-img img {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -40%;
+  margin-top: -40%;
+}
+body #wrap .song-info {
+  height: 20vh;
+  margin-top: 6vw;
+  text-align: center;
+  color: #fff;
+}
+body #wrap .song-info h2 {
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 3vw;
+}
+body #wrap .song-info div {
+  font-size: 14px;
+}
+body #wrap .song-drag {
+  display: flex;
+  height: 8vw;
+  align-items: center;
+  position: relative;
+  color: #fff;
+  z-index: 3;
+}
+body #wrap .song-drag .cur-time {
+  padding: 0 4vw;
+}
+body #wrap .song-drag .progress {
+  flex: 1 1 auto;
+  height: 0.6vw;
+  position: relative;
+}
+body #wrap .song-drag .progress .circle {
+  height: 2vw;
+  width: 2vw;
+  border: 2vw solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  position: absolute;
+  left: -3vw;
+  top: 50%;
+  margin-top: -3vw;
+  border-radius: 50%;
+  background-color: #fff;
+}
+body #wrap .song-drag .progress .front-progress,
+body #wrap .song-drag .progress .behind-progress {
+  width: 0;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -0.3vw;
+  height: 0.6vw;
+  background-color: #fff;
+  z-index: 2;
+}
+body #wrap .song-drag .progress .behind-progress {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+body #wrap .song-drag .total-time {
+  padding: 0 4vw;
+}
+body #wrap .song-control {
+  display: flex;
+  height: 16vw;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+body #wrap .song-control li {
+  width: 20%;
+}
+body #wrap .song-control li:nth-child(1) {
+  background: url(../images/icon-like.png) no-repeat center / 30%;
+}
+body #wrap .song-control li:nth-child(1).liking {
+  background-image: url(../images/icon-like-solid.png);
+}
+body #wrap .song-control li:nth-child(2) {
+  background: url(../images/icon-prev.png) no-repeat center / 30%;
+}
+body #wrap .song-control li:nth-child(3) {
+  background: url(../images/icon-play.png) no-repeat center / 30%;
+}
+body #wrap .song-control li:nth-child(3).playing {
+  background-image: url(../images/icon-pause.png);
+}
+body #wrap .song-control li:nth-child(4) {
+  background: url(../images/icon-next.png) no-repeat center / 30%;
+}
+body #wrap .song-control li:nth-child(5) {
+  background: url(../images/icon-list.png) no-repeat center / 30%;
+}
+body #wrap .play-list {
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  background: linear-gradient(#000000, rgba(120, 120, 120, 0.95));
+  color: #fff;
+  z-index: 4;
+}
+body #wrap .play-list .play-title,
+body #wrap .play-list .close {
+  text-align: center;
+}
+body #wrap .play-list dd {
+  padding-left: 3vw;
+}
+body #wrap .play-list dd.active {
+  color: #2ea823;
+}
+body #wrap .play-list dl,
+body #wrap .play-list dd,
+body #wrap .play-list div {
+  height: 12vw;
+  line-height: 12vw;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+body #wrap .play-list .close {
+  border-bottom: none;
+}

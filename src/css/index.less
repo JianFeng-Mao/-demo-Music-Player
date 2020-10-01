@@ -1,0 +1,161 @@
+body,dl,dd,h2{
+    margin: 0;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-size: cover;
+        #wrap{
+            width: 100vw;
+            height: 100vh;
+            padding-top: 15vw;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, .2);
+        
+            // 歌曲图片
+            .song-img{
+                width: 70vw;
+                height: 70vw;
+                border-radius: 50%;
+                background: #000;
+                margin: 0 auto; 
+                position: relative;
+                img{
+                    width: 80%;
+                    height: 80%;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    margin-left: -40%;
+                    margin-top: -40%;
+                }
+            }
+        //歌曲信息
+        .song-info{
+            height: 20vh;
+            margin-top: 6vw;
+            text-align: center;
+            color: #fff;
+            h2{
+                font-size: 24px;
+                font-weight: normal;
+                margin-bottom: 3vw;
+            }
+            div{
+                font-size: 14px;
+            }
+        }
+        //时间和进度条
+        .song-drag{
+            display: flex;
+            // border: 1px solid #000;
+            height: 8vw;
+            align-items: center;
+            position: relative;
+            color: #fff;
+            z-index: 3;
+            .cur-time{
+                padding: 0 4vw;
+            }
+            .progress{
+                flex: 1 1 auto;
+                height: .6vw;
+                position: relative;
+                .circle{
+                    height: 2vw;
+                    width: 2vw;
+                    border: 2vw solid rgba(0, 0, 0, 0);
+                    background-clip: padding-box;
+                    position: absolute;
+                    left: -3vw;
+                    top: 50%;
+                    margin-top: -3vw;
+                    
+                    border-radius: 50%;
+                    background-color: #fff;
+                }
+                .front-progress,.behind-progress{
+                    width: 0;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    margin-top: -.3vw;
+                    height: .6vw;
+                    background-color: #fff;
+                    z-index: 2;
+                }
+                .behind-progress{
+                    width: 100%;
+                    background-color: rgba(0, 0, 0, .3);
+                    z-index: 1;
+                }
+            }
+            .total-time{
+                padding: 0 4vw;
+            }
+        }
+        // 歌曲控制区
+        .song-control{
+            display:flex;
+            height: 16vw;
+            width: 100vw;
+            position: fixed;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .5);
+            li{
+                width: 20%;
+            }
+            li:nth-child(1){
+                background: url(../images/icon-like.png) no-repeat center/30%;
+                &.liking{
+                    background-image: url(../images/icon-like-solid.png);
+                }
+            }
+            li:nth-child(2){
+                background: url(../images/icon-prev.png) no-repeat center/30%;
+            }
+            li:nth-child(3){
+                background: url(../images/icon-play.png) no-repeat center/30%;
+                &.playing{
+                    background-image: url(../images/icon-pause.png);
+                }
+            }
+            li:nth-child(4){
+                background: url(../images/icon-next.png) no-repeat center/30%;
+            }
+            li:nth-child(5){
+                background: url(../images/icon-list.png) no-repeat center/30%;
+            }
+        }
+        //播放列表
+        .play-list{
+            width: 100vw;
+            position: fixed;
+            bottom: 0;
+            background: linear-gradient(rgb(0,0,0),rgba(120,120,120,.95));
+            color: #fff;
+            z-index: 4;
+            .play-title,.close{
+                text-align: center;
+            }
+            dd{
+                padding-left: 3vw;
+                &.active{
+                    color: rgb(46, 168, 35);
+                }
+            }
+            dl,dd,div{
+                height: 12vw;
+                line-height: 12vw;
+                border-bottom: 1px solid rgba(255,255,255,.1);
+            }
+            .close{
+                border-bottom: none;
+            }
+        }
+    }
+}
