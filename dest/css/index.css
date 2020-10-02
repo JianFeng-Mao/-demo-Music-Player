@@ -137,6 +137,7 @@ body #wrap .play-list {
   background: linear-gradient(#000000, rgba(120, 120, 120, 0.95));
   color: #fff;
   z-index: 4;
+  transform: translateY(300px);
 }
 body #wrap .play-list .play-title,
 body #wrap .play-list .close {

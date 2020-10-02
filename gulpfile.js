@@ -28,8 +28,8 @@ function css() {
 }
 function js() {
     return src(folder.src + 'js/*')
-            .pipe(stripDebug())
-            .pipe(uglify())
+            // .pipe(stripDebug())
+            // .pipe(uglify())
             .pipe(dest(folder.dest + 'js/'))
             .pipe(connect.reload());
 }
