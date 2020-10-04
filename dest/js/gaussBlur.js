@@ -4,10 +4,17 @@
 		var width = imgData.width;
 		var height = imgData.height;
 		var gaussMatrix = [],
-			gaussSum = 0,
-			x, y,
-			r, g, b, a,
-			i, j, k, len;
+		    gaussSum = 0,
+		    x,
+		    y,
+		    r,
+		    g,
+		    b,
+		    a,
+		    i,
+		    j,
+		    k,
+		    len;
 
 		var radius = 10;
 		var sigma = 5;
@@ -19,7 +26,6 @@
 			g = a * Math.exp(b * x * x);
 			gaussMatrix[i] = g;
 			gaussSum += g;
-
 		}
 		//归一化, 保证高斯矩阵的值在[0,1]之间
 		for (i = 0, len = gaussMatrix.length; i < len; i++) {
@@ -32,7 +38,8 @@
 				gaussSum = 0;
 				for (j = -radius; j <= radius; j++) {
 					k = x + j;
-					if (k >= 0 && k < width) {//确保 k 没超出 x 的范围
+					if (k >= 0 && k < width) {
+						//确保 k 没超出 x 的范围
 						//r,g,b,a 四个一组
 						i = (y * width + k) * 4;
 						r += pixes[i] * gaussMatrix[j + radius];
@@ -58,7 +65,8 @@
 				gaussSum = 0;
 				for (j = -radius; j <= radius; j++) {
 					k = y + j;
-					if (k >= 0 && k < height) {//确保 k 没超出 y 的范围
+					if (k >= 0 && k < height) {
+						//确保 k 没超出 y 的范围
 						i = (k * width + x) * 4;
 						r += pixes[i] * gaussMatrix[j + radius];
 						g += pixes[i + 1] * gaussMatrix[j + radius];
@@ -80,11 +88,11 @@
 	//1、增加了第二个参数
 	function blurImg(src, ele) {
 		var canvas = document.createElement('canvas');
-		ele=ele||document.body;
-		
+		ele = ele || document.body;
+
 		//2、这两个值越小，图片就会越模糊
-		canvas.width=100;
-		canvas.height=100;
+		canvas.width = 100;
+		canvas.height = 100;
 
 		var context = canvas.getContext('2d');
 
@@ -93,13 +101,13 @@
 		img.src = src;
 		img.onload = function () {
 			context.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
-			var imgData=context.getImageData(0, 0, canvas.width, canvas.height);
-			var gaussData=gaussBlur(imgData);
+			var imgData = context.getImageData(0, 0, canvas.width, canvas.height);
+			var gaussData = gaussBlur(imgData);
 			context.putImageData(gaussData, 0, 0);
 			var imgSrc = canvas.toDataURL();
 
-			ele.style.backgroundImage='url('+imgSrc+')';
-		}
+			ele.style.backgroundImage = 'url(' + imgSrc + ')';
+		};
 	}
 
 	root.blurImg = blurImg;

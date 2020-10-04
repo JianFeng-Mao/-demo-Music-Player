@@ -1,6 +1,7 @@
 //模块1： 渲染背景、音乐信息、是否喜欢
 (function (root) {
     function renderImg(src){
+        
         root.blurImg(src);
         var img = document.querySelector(".song-img img");
         img.src = src;

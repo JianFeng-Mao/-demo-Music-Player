@@ -1,7 +1,7 @@
 (function (root) {
     function AudioManage() {
         this.audio = new Audio();
-        this.state = "pause";  //默认为暂停状态
+        this.state = "pause"; //默认为暂停状态
     }
     AudioManage.prototype = {
 
@@ -10,7 +10,7 @@
             this.audio.load();
         },
 
-        play: function () {  //播放音乐
+        play: function () { //播放音乐
             this.audio.play();
             this.state = "play";
         },
@@ -24,8 +24,9 @@
             this.audio.ended = fn;
         },
 
-        playTo: function(time) {
-            this.audio.currentTime = time;  //单位是秒，不是毫秒
+        playTo: function (time) {
+            console.log(time)
+            this.audio.currentTime = time; //单位是秒，不是毫秒
         }
     }
 

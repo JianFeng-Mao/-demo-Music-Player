@@ -88,12 +88,10 @@ body #wrap .song-drag .progress .behind-progress {
   margin-top: -0.3vw;
   height: 0.6vw;
   background-color: #fff;
-  z-index: 2;
 }
 body #wrap .song-drag .progress .behind-progress {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 body #wrap .song-drag .total-time {
   padding: 0 4vw;
@@ -132,16 +130,26 @@ body #wrap .song-control li:nth-child(5) {
 }
 body #wrap .play-list {
   width: 100vw;
+  height: 220px;
   position: fixed;
   bottom: 0;
   background: linear-gradient(#000000, rgba(120, 120, 120, 0.95));
   color: #fff;
   z-index: 4;
-  transform: translateY(300px);
+}
+body #wrap .play-list .music-list {
+  height: 176.8px;
+}
+body #wrap .play-list .music-list .title-list {
+  overflow-y: scroll;
+  height: 134.6px;
+  transform: translateY(44.2px);
 }
 body #wrap .play-list .play-title,
 body #wrap .play-list .close {
+  position: fixed;
   text-align: center;
+  width: 100%;
 }
 body #wrap .play-list dd {
   padding-left: 3vw;
@@ -151,7 +159,7 @@ body #wrap .play-list dd.active {
 }
 body #wrap .play-list dl,
 body #wrap .play-list dd,
-body #wrap .play-list div {
+body #wrap .play-list .close {
   height: 12vw;
   line-height: 12vw;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
