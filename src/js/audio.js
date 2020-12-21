@@ -25,7 +25,7 @@
         },
 
         playTo: function (time) {
-            console.log(time)
+            // console.log(time)
             this.audio.currentTime = time; //单位是秒，不是毫秒
         }
     }
