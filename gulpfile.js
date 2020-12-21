@@ -11,7 +11,7 @@ const connect = require('gulp-connect');  //实现热更新的插件
 
 const folder = { //统一文件的根目录，便于修改
     src : 'src/',
-    dest : 'dest/',
+    dest : 'docs/',
 }
 
 //处理 文件任务： 返回相应文件的压缩文件
